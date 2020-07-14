@@ -1,0 +1,36 @@
+name: Copy MD Files
+on:
+  watch:
+    types: [started]
+  
+jobs:
+  copymd:
+    name: Copy MD files from submodules
+    runs-on: ubuntu-latest
+
+    if: github.actor == github.event.repository.owner.login
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        submodules: 'recursive'
+        
+        # This script will find all the .md extension files from given submodules 
+        # and will copy them under 'packages' folder while preserving the directory structure
+        #
+        # find ./*/                 = look into all sub folders
+        # -not -path '*/\.*'        = exclude hidden folders, starting with dot, like .github/
+        # -not -path './packages'   = exclude 'packages' folder, which we copy files into for documentation
+        # -regex ".*\.\(md\)"       = only md files
+        #
+      - name: Copy mds
+        run: |
+          find ./*/ -not -path '*/\.*' -not -path './packages' -regex ".*\.\(md\)" | while read line; do
+            echo "Copying '$line' to ./packages"
+            mkdir -p `dirname ./packages/$line`
+            cp -- "$line" ./packages/${line}
+          done
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v2

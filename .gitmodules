@@ -1,0 +1,6 @@
+[submodule "yagna"]
+	path = yagna
+	url = https://github.com/golemfactory/yagna.git
+[submodule "ya-client"]
+	path = ya-client
+	url = https://github.com/golemfactory/ya-client.git
