@@ -14,7 +14,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-        submodules: 'recursive'
+        with:
+          submodules: true
         
         # This script will find all the .md extension files from given submodules 
         # and will copy them under 'packages' folder while preserving the directory structure
