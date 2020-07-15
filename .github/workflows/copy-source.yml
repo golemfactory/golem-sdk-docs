@@ -21,7 +21,6 @@ jobs:
       - name: Copy mds
         run: |
             while IFS="=" read -r key value; do
-              echo $key $value
               echo "Copying '$key' to '$value'"
               mkdir -p `dirname ./$value`
               cp -- ./${key} ./${value}
