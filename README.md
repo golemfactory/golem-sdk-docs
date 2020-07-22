@@ -3,6 +3,7 @@
 The repo consist of two main branches, `master` and `prod`. 
 
 `prod` is connected with gitbook so any change there will be instantly available on public doc.
+
 `master` branch is for tracking md files from linked submodules and map those files to appropriate documentation directories.
 
 ## How it works
