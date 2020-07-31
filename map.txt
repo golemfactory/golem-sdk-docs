@@ -1,0 +1,3 @@
+yagna/docs/service-bus/ysb-api-concept.md=tutorial/init.md
+yagna/docs/payment-api/market-api-dummy.md=tutorial/start.md
+source/README.md=tutorial/new.md
