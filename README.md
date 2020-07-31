@@ -1,4 +1,4 @@
-# Golem SDK Docs
+# MOD Golem SDK Docs
 
 The repo consist of two main branches, `master` and `prod`. 
 
