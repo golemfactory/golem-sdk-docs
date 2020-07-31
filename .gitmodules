@@ -4,3 +4,6 @@
 [submodule "ya-client"]
 	path = ya-client
 	url = https://github.com/golemfactory/ya-client.git
+[submodule "source"]
+	path = source
+	url = https://github.com/rad9k/source.git
